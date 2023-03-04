@@ -4,11 +4,11 @@
 
 int main(int argc, char *argv[])
 {
-    int a, i, j;
+    int a, i, j, k;
     double x1=0, x2=0;
 	printf("Insert size of your massiv:\n");
 	scanf("%d", &a);
-	double x[a][a];
+	double x[a][a], y[a][a];
 	printf("Insert meanings of elements of massiv:\n");
 	for (i = 0; i<a; i++)
 	{
@@ -25,6 +25,28 @@ int main(int argc, char *argv[])
 			}
     	}
 	}
-	
+	printf("\nYour massive\n");
+	for (i=0; i<a; i++)
+	{
+	    for (j=0; j<a; j++)
+    	    printf("%3lf ", x[i][j]);
+    	printf("\n");
+	}
 	printf("Main di: %lf, Dop di: %lf", x1, x2);
+	for(i = 0; i<a; i++)
+	{
+    	for(j = 0; j<a; j++)
+    	{
+   		    y[i][j]=0;
+ 		    for(k=0; k<a; k++)
+    	    y[i][j] += x[i][k] * x[k][j];
+    	}
+	}
+	printf("\nSquare of massive\n");
+	for (i=0; i<a; i++)
+	{
+	    for (j=0; j<a; j++)
+    	    printf("%3lf ", y[i][j]);
+    	printf("\n");
+	}
 }
