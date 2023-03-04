@@ -27,9 +27,10 @@ int main(int argc, char *argv[])
 	}
 	printf("\nYour massive\n");
 	for (i=0; i<a; i++)
+	
 	{
 	    for (j=0; j<a; j++)
-    	    printf("%3lf ", x[i][j]);
+    	    printf("%lf ", x[i][j]);
     	printf("\n");
 	}
 	printf("Main di: %lf, Dop di: %lf", x1, x2);
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
 	for (i=0; i<a; i++)
 	{
 	    for (j=0; j<a; j++)
-    	    printf("%3lf ", y[i][j]);
+    	    printf("%lf ", y[i][j]);
     	printf("\n");
 	}
 }
