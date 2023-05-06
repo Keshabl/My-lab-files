@@ -2,89 +2,73 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct User {
-    char first_name[50];
-    char last_name[50];
+typedef struct {
+    char name[20];
     int birth_year;
-    char gender[10];
+    char gender[20];
     int height;
-};
+} User;
 
-int compare_birth_year(const void *p1, const void *p2) {
-    const struct User *user1 = p1;
-    const struct User *user2 = p2;
-    return user1->birth_year - user2->birth_year;
+int compare_by_name(const void *a, const void *b) {
+    return strcmp(((User *)a)->name, ((User *)b)->name);
 }
 
-int compare_name(const void *p1, const void *p2) {
-    const struct User *user1 = p1;
-    const struct User *user2 = p2;
-    int cmp = strcmp(user1->last_name, user2->last_name);
-    if (cmp == 0) {
-        cmp = strcmp(user1->first_name, user2->first_name);
-    }
-    return cmp;
+int compare_by_birth_year(const void *a, const void *b) {
+    return ((User *)a)->birth_year - ((User *)b)->birth_year;
 }
 
-int compare_gender(const void *p1, const void *p2) {
-    const struct User *user1 = p1;
-    const struct User *user2 = p2;
-    int cmp = strcmp(user1->gender, user2->gender);
-    return cmp;
+int compare_by_gender(const void *a, const void *b) {
+    return strcmp(((User *)a)->gender, ((User *)b)->gender);
 }
 
-int compare_height(const void *p1, const void *p2) {
-    const struct User *user1 = p1;
-    const struct User *user2 = p2;
-    return user1->height - user2->height;
+int compare_by_height(const void *a, const void *b) {
+    return ((User *)a)->height - ((User *)b)->height;
 }
-
 
 int main() {
-    char filename[100];
-
-    FILE *fp = fopen("people.txt", "r");
+    FILE *fp;
+    char line[100];
+    User users[100];
+    int num_users = 0;
+    int sort_field;
+	int i;
+    fp = fopen("people.txt", "r");
     if (fp == NULL) {
-        printf("Error opening file %s\n", filename);
+        printf("Error opening file\n");
         return 1;
     }
 
-    int count = 0;
-    struct User users[100];
-
-    while (fscanf(fp, "%s %s %d %s %d\n", users[count].first_name, users[count].last_name, &users[count].birth_year, users[count].gender, &users[count].height) == 5) {
-        count++;
+    while (fgets(line, sizeof(line), fp)) {
+        sscanf(line, "%s %d %s %d", users[num_users].name, &users[num_users].birth_year, &users[num_users].gender, &users[num_users].height);
+		num_users++;
     }
 
     fclose(fp);
 
-    printf("Sort by what? (1-n,2-y,3-g,4-h): ");
-    int field;
-    scanf("%d", &field);
+    printf("Enter sort field (1 for name, 2 for birth year, 3 for gender, 4 for height): ");
+    scanf("%d", &sort_field);
 
-    switch (field) {
+    switch (sort_field) {
         case 1:
-            qsort(users, count, sizeof(struct User), compare_name);
+            qsort(users, num_users, sizeof(User), compare_by_name);
             break;
         case 2:
-            qsort(users, count, sizeof(struct User), compare_birth_year);
+            qsort(users, num_users, sizeof(User), compare_by_birth_year);
             break;
         case 3:
-            qsort(users, count, sizeof(struct User), compare_gender);
+            qsort(users, num_users, sizeof(User), compare_by_gender);
             break;
         case 4:
-            qsort(users, count, sizeof(struct User), compare_height);
+            qsort(users, num_users, sizeof(User), compare_by_height);
             break;
         default:
-            printf("Takogo ne predlagali %d\n", field);
+            printf("Invalid sort field\n");
             return 1;
     }
-    
-	int i;
-    for (i = 0; i < count; i++) {
-        printf("%s %s, %d, %s, %d\n", users[i].first_name, users[i].last_name, users[i].birth_year, users[i].gender, users[i].height);
+
+    for (i = 0; i < num_users; i++) {
+        printf("\nName: %s\nBirth year: %d\nGender: %s\nHeight: %d\n", users[i].name, users[i].birth_year, users[i].gender, users[i].height);
     }
 
     return 0;
 }
-
