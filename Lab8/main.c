@@ -30,7 +30,7 @@ int main() {
     char line[100];
     User users[100];
     int num_users = 0;
-    int sort_field;
+    int sort_field = 1;
 	int i;
     fp = fopen("people.txt", "r");
     if (fp == NULL) {
@@ -44,8 +44,9 @@ int main() {
     }
 
     fclose(fp);
-
-    printf("Enter sort field (1 for name, 2 for birth year, 3 for gender, 4 for height): ");
+    while (sort_field != 0){
+	
+    printf("Enter sort field (1 for name, 2 for birth year, 3 for gender, 4 for height, 0 to stop): ");
     scanf("%d", &sort_field);
 
     switch (sort_field) {
@@ -61,11 +62,13 @@ int main() {
         case 4:
             qsort(users, num_users, sizeof(User), compare_by_height);
             break;
+        case 0:
+            break;            
         default:
             printf("Invalid sort field\n");
             return 1;
     }
-
+	}
     for (i = 0; i < num_users; i++) {
         printf("\nName: %s\nBirth year: %d\nGender: %s\nHeight: %d\n", users[i].name, users[i].birth_year, users[i].gender, users[i].height);
     }
