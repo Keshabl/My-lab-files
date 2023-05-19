@@ -1,23 +1,15 @@
-# Project: Lab7
+# Project: Lab9
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-<<<<<<< HEAD
 OBJ      = main.o
 LINKOBJ  = main.o
-LIBS     = -L"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib" -L"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
-CXXINCS  = -I"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/LuckyOwl397/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-=======
-OBJ      = Lab7.o
-LINKOBJ  = Lab7.o
 LIBS     = -L"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib" -L"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"//sysprofiles.adm.vvsu.ru/STUDENTRPROFILES$/Kesha_bl/Downloads/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
->>>>>>> 55951a9e1ae1606c83e7d278eda8aa198106662e
-BIN      = Lab7.exe
+BIN      = Lab9.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm.exe -f
@@ -32,10 +24,5 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-<<<<<<< HEAD
 main.o: main.c
 	$(CC) -c main.c -o main.o $(CFLAGS)
-=======
-Lab7.o: Lab7.c
-	$(CC) -c Lab7.c -o Lab7.o $(CFLAGS)
->>>>>>> 55951a9e1ae1606c83e7d278eda8aa198106662e
