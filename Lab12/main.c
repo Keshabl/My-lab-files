@@ -31,7 +31,7 @@ int main()
             printf("Invalid input.\n");
             return 1;
         }
-        if (month < 1 || month > 12 || day < 1 || day > 31) {
+        if (month < 1 || month > 12 || day < 1 || day > 31 || year < 1900 || year > 2099) {
             printf("Invalid date.\n");
             return 1;
         }

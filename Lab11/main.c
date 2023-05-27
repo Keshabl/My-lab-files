@@ -20,10 +20,10 @@ int main() {
     }
 
     // выводим результаты работы функций
-    printf("Sum: %d\n", sum(n, numbers));
-    printf("Max: %d\n", max(n, numbers));
-    printf("Min: %d\n", min(n, numbers));
-    printf("Avg: %.2f\n", average(n, numbers));
+    printf("Sum: %d\n", sum(2, 4, 5));
+    printf("Max: %d\n", max(2, 4, 5));
+    printf("Min: %d\n", min(2, 4, 5));
+    printf("Avg: %.2f\n", average(2, 4, 5));
 
     return 0;
 }

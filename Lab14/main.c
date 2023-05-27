@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <setjmp.h>
-#define DEBUG 100000
+#define con 10000
 jmp_buf env;
 
 int fib(int n)
@@ -12,7 +12,7 @@ int fib(int n)
     } else {
         int a = fib(n - 1);
         int b = fib(n - 2);
-        if (b > DEBUG) {
+        if (b > (con*con)) {
             longjmp(env, 1);
         }
         return a + b;

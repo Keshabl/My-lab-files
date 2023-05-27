@@ -23,9 +23,9 @@ int main() {
     printf("Enter a natural number: ");
     scanf("%d", &n);
 
-    printf("Digits forward: ");
+    printf("Forward: ");
     printDigitsForward(n);
-    printf("\nDigits backward: ");
+    printf("\nBackward: ");
     printDigitsBackward(n);
 
     return 0;
